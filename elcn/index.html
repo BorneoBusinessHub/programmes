@@ -15,6 +15,57 @@
     <link rel="preload" as="image" href="assets/sale-page-01.png">
     <link rel="preload" as="image" href="assets/sale-page-02.png">
     <link rel="preload" as="image" href="assets/sale-page-03.png">
+    <!-- Meta Pixel Code -->
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '715634827284584');
+      fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=715634827284584&ev=PageView&noscript=1"
+      alt=""></noscript>
+    <!-- End Meta Pixel Code -->
+    <script>
+      (function () {
+        function trackViewContentOnce() {
+          if (window.__metaViewContentTracked || typeof window.fbq !== 'function') return;
+          window.__metaViewContentTracked = true;
+          window.fbq('track', 'ViewContent');
+        }
+
+        function bindWhatsappContactTracking() {
+          var buttons = document.querySelectorAll('.whatsapp-cta[href*="wa.me"], .whatsapp-cta[href*="api.whatsapp.com"]');
+
+          buttons.forEach(function (button) {
+            if (button.dataset.metaContactBound === 'true') return;
+            button.dataset.metaContactBound = 'true';
+
+            button.addEventListener('click', function () {
+              if (window.__metaContactTracked || typeof window.fbq !== 'function') return;
+              window.__metaContactTracked = true;
+              window.fbq('track', 'Contact');
+            });
+          });
+        }
+
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', function () {
+            trackViewContentOnce();
+            bindWhatsappContactTracking();
+          }, { once: true });
+        } else {
+          trackViewContentOnce();
+          bindWhatsappContactTracking();
+        }
+      })();
+    </script>
     <style>
       :root {
         --page-width: 1080px;
