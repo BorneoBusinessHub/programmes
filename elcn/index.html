@@ -2,80 +2,123 @@
 <html lang="zh-Hans">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <title>劳工法令合规与 HR 管理文件实战课程</title>
     <meta
       name="description"
-      content="两天学会劳工法令合规与 HR 管理文件实战课程，报名即送 21 份 HR 必备文件样本。"
+      content="两天掌握劳工法令合规、PIP、纪律处分、终止合约与 HR 文件实操。报名即送 21 份 HR 文件模板，文件礼包价值 RM3,050。"
     >
     <meta property="og:title" content="劳工法令合规与 HR 管理文件实战课程">
-    <meta property="og:description" content="掌握最新修订内容，保障雇主权利，避免赔偿风险。">
+    <meta property="og:description" content="报名即送 21 份 HR 文件模板，文件礼包价值 RM3,050，上课领取可直接用。">
     <meta property="og:image" content="assets/sale-page-01.png">
     <meta property="og:type" content="website">
+    <meta name="theme-color" content="#0a0a0a">
     <link rel="preload" as="image" href="assets/sale-page-01.png">
     <link rel="preload" as="image" href="assets/sale-page-02.png">
     <link rel="preload" as="image" href="assets/sale-page-03.png">
+
     <!-- Meta Pixel Code -->
     <script>
-      !function(f,b,e,v,n,t,s)
-      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-      n.queue=[];t=b.createElement(e);t.async=!0;
-      t.src=v;s=b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t,s)}(window, document,'script',
-      'https://connect.facebook.net/en_US/fbevents.js');
-      fbq('init', '715634827284584');
-      fbq('track', 'PageView');
+      (function () {
+        window.__bbhCourseContentName = '劳工法令合规与HR管理文件实战课程';
+        window.__bbhWhatsappUrl = 'https://wa.me/60138190223?text=%E6%88%91%E6%83%B3%E4%BA%86%E8%A7%A3%E5%8A%B3%E5%B7%A5%E6%B3%95%E4%BB%A4%E8%AF%BE%E7%A8%8B';
+
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+
+        fbq('init', '715634827284584');
+        fbq('track', 'PageView', {
+          content_name: window.__bbhCourseContentName,
+          content_category: 'Employment Law Workshop'
+        });
+      })();
     </script>
-    <noscript><img height="1" width="1" style="display:none"
-      src="https://www.facebook.com/tr?id=715634827284584&ev=PageView&noscript=1"
-      alt=""></noscript>
+    <noscript>
+      <img
+        height="1"
+        width="1"
+        style="display:none"
+        src="https://www.facebook.com/tr?id=715634827284584&ev=PageView&noscript=1"
+        alt=""
+      >
+    </noscript>
     <!-- End Meta Pixel Code -->
+
     <script>
       (function () {
-        function trackViewContentOnce() {
-          if (window.__metaViewContentTracked || typeof window.fbq !== 'function') return;
-          window.__metaViewContentTracked = true;
-          window.fbq('track', 'ViewContent');
+        var contentName = '劳工法令合规与HR管理文件实战课程';
+        var viewContentTracked = false;
+        var contactTracked = false;
+
+        function safeTrack(eventName, params) {
+          if (typeof window.fbq !== 'function') return;
+          window.fbq('track', eventName, params || {});
         }
 
-        function bindWhatsappContactTracking() {
-          var buttons = document.querySelectorAll('.whatsapp-cta[href*="wa.me"], .whatsapp-cta[href*="api.whatsapp.com"]');
+        function trackViewContentOnce() {
+          if (viewContentTracked) return;
+          viewContentTracked = true;
+          safeTrack('ViewContent', {
+            content_name: contentName,
+            content_category: 'Employment Law Workshop'
+          });
+        }
 
-          buttons.forEach(function (button) {
-            if (button.dataset.metaContactBound === 'true') return;
-            button.dataset.metaContactBound = 'true';
+        function trackContactOnce() {
+          if (contactTracked) return;
+          contactTracked = true;
+          safeTrack('Contact', {
+            content_name: contentName,
+            content_category: 'Employment Law Workshop',
+            contact_channel: 'WhatsApp'
+          });
+        }
 
-            button.addEventListener('click', function () {
-              if (window.__metaContactTracked || typeof window.fbq !== 'function') return;
-              window.__metaContactTracked = true;
-              window.fbq('track', 'Contact');
-            });
+        function bindEvents() {
+          var observerTarget = document.querySelector('[data-view-content-trigger]');
+          if ('IntersectionObserver' in window && observerTarget) {
+            var observer = new IntersectionObserver(function (entries) {
+              entries.forEach(function (entry) {
+                if (!entry.isIntersecting) return;
+                trackViewContentOnce();
+                observer.disconnect();
+              });
+            }, { threshold: 0.25 });
+            observer.observe(observerTarget);
+          } else {
+            window.addEventListener('scroll', trackViewContentOnce, { once: true, passive: true });
+            window.setTimeout(trackViewContentOnce, 1500);
+          }
+
+          document.querySelectorAll('[data-whatsapp-cta]').forEach(function (button) {
+            button.addEventListener('click', trackContactOnce);
           });
         }
 
         if (document.readyState === 'loading') {
-          document.addEventListener('DOMContentLoaded', function () {
-            trackViewContentOnce();
-            bindWhatsappContactTracking();
-          }, { once: true });
+          document.addEventListener('DOMContentLoaded', bindEvents, { once: true });
         } else {
-          trackViewContentOnce();
-          bindWhatsappContactTracking();
+          bindEvents();
         }
       })();
     </script>
+
     <style>
       :root {
         --page-width: 1080px;
-        --yellow: #fff200;
         --black: #050505;
-        --red: #e41b1b;
-        --deep-red: #9c1717;
+        --red: #e11919;
+        --deep-red: #8f1111;
+        --yellow: #fff200;
         --whatsapp: #25d366;
         --whatsapp-dark: #075e32;
-        --shadow: 0 18px 55px rgba(0, 0, 0, 0.34);
+        --shadow: 0 20px 60px rgba(0, 0, 0, 0.36);
       }
 
       * {
@@ -91,20 +134,26 @@
         margin: 0;
         min-height: 100vh;
         color: #fff;
-        font-family: Arial, "Microsoft YaHei", "PingFang SC", "Noto Sans CJK SC", sans-serif;
+        font-family: Arial, "Microsoft YaHei", "PingFang SC", "Noto Sans SC", sans-serif;
         background:
-          radial-gradient(circle at top, rgba(255, 242, 0, 0.2), transparent 26rem),
-          linear-gradient(180deg, #050505 0%, #151515 42%, #8f1717 100%);
+          radial-gradient(circle at top, rgba(255, 242, 0, 0.16), transparent 28rem),
+          linear-gradient(180deg, #050505 0%, #161616 46%, #8f1111 100%);
+      }
+
+      .page-shell {
+        width: 100%;
+        padding-inline: max(0px, env(safe-area-inset-left)) max(0px, env(safe-area-inset-right));
       }
 
       .landing {
         width: min(100%, var(--page-width));
         margin: 0 auto;
+        overflow: hidden;
         background: #fff;
         box-shadow: var(--shadow);
       }
 
-      .panel {
+      .sale-panel {
         display: block;
         width: 100%;
         height: auto;
@@ -112,53 +161,62 @@
         border: 0;
       }
 
-      .cta-strip,
-      .cta-footer {
+      .cta-band {
         margin: 0;
+        padding: clamp(20px, 4vw, 42px) clamp(18px, 5vw, 52px);
         text-align: center;
-      }
-
-      .cta-strip {
-        padding: clamp(22px, 4vw, 42px) clamp(18px, 4vw, 42px);
-        background: linear-gradient(180deg, #fff200 0%, #f0c700 100%);
-        border-top: 8px solid #a01515;
-        border-bottom: 8px solid #a01515;
-      }
-
-      .cta-footer {
-        padding: 54px 34px 64px;
         background: linear-gradient(180deg, var(--red) 0%, var(--deep-red) 100%);
-        border-top: 10px solid var(--yellow);
+        border-top: clamp(6px, 1vw, 10px) solid var(--yellow);
+        border-bottom: clamp(6px, 1vw, 10px) solid var(--yellow);
+      }
+
+      .cta-band.gold {
+        background: linear-gradient(180deg, #fff200 0%, #f2c800 100%);
+        border-color: var(--deep-red);
       }
 
       .cta-title {
-        margin: 0 0 22px;
+        margin: 0 0 clamp(14px, 2.2vw, 22px);
         color: #fff;
-        font-size: clamp(32px, 6vw, 66px);
+        font-size: clamp(28px, 5.4vw, 62px);
         font-weight: 900;
-        line-height: 1.05;
-        letter-spacing: 0;
-        text-shadow: 0 5px 8px rgba(0, 0, 0, 0.35);
+        line-height: 1.08;
+        text-shadow: 0 5px 8px rgba(0, 0, 0, 0.4);
+      }
+
+      .cta-band.gold .cta-title {
+        color: #111;
+        text-shadow: none;
       }
 
       .whatsapp-cta {
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        min-height: 86px;
         width: min(100%, 760px);
-        padding: 20px 28px;
-        border: 5px solid #fff;
-        border-radius: 18px;
+        min-height: clamp(62px, 8vw, 88px);
+        padding: clamp(16px, 2vw, 22px) clamp(22px, 4vw, 34px);
         color: #fff;
-        text-decoration: none;
         font-size: clamp(26px, 5vw, 54px);
         font-weight: 900;
-        line-height: 1.08;
-        letter-spacing: 0;
-        background: linear-gradient(180deg, #35f277 0%, var(--whatsapp) 44%, #128c4a 100%);
-        box-shadow: 0 12px 0 var(--whatsapp-dark), 0 24px 38px rgba(0, 0, 0, 0.36);
+        line-height: 1.05;
+        text-decoration: none;
+        letter-spacing: 0.02em;
+        background: linear-gradient(180deg, #35f277 0%, var(--whatsapp) 46%, #128c4a 100%);
+        border: clamp(3px, 0.7vw, 5px) solid #fff;
+        border-radius: clamp(12px, 2vw, 18px);
+        box-shadow: 0 clamp(8px, 1.3vw, 12px) 0 var(--whatsapp-dark), 0 24px 38px rgba(0, 0, 0, 0.34);
         text-shadow: 0 3px 5px rgba(0, 0, 0, 0.34);
+      }
+
+      .whatsapp-cta:hover {
+        filter: brightness(1.04);
+        transform: translateY(-1px);
+      }
+
+      .whatsapp-cta:active {
+        transform: translateY(3px);
+        box-shadow: 0 5px 0 var(--whatsapp-dark), 0 14px 24px rgba(0, 0, 0, 0.32);
       }
 
       .whatsapp-cta:focus-visible {
@@ -166,7 +224,33 @@
         outline-offset: 5px;
       }
 
-      @media (max-width: 760px) {
+      .sticky-mobile-cta {
+        position: fixed;
+        right: 14px;
+        bottom: calc(14px + env(safe-area-inset-bottom));
+        left: 14px;
+        z-index: 20;
+        display: none;
+      }
+
+      .sticky-mobile-cta .whatsapp-cta {
+        width: 100%;
+        min-height: 58px;
+        font-size: 26px;
+        border-radius: 14px;
+      }
+
+      @media (min-width: 1180px) {
+        .page-shell {
+          padding-block: 24px 42px;
+        }
+
+        .landing {
+          border-radius: 8px;
+        }
+      }
+
+      @media (max-width: 900px) {
         body {
           background: #050505;
         }
@@ -174,24 +258,28 @@
         .landing {
           box-shadow: none;
         }
+      }
 
-        .cta-strip {
-          padding: 22px 16px 28px;
-          border-top-width: 6px;
-          border-bottom-width: 6px;
+      @media (max-width: 640px) {
+        .cta-band {
+          padding: 24px 16px 30px;
         }
 
-        .cta-footer {
-          padding: 34px 18px 44px;
-          border-top-width: 7px;
+        .cta-title {
+          font-size: 30px;
         }
 
         .whatsapp-cta {
-          min-height: 64px;
           width: min(100%, 520px);
-          border-width: 3px;
-          border-radius: 12px;
-          box-shadow: 0 8px 0 var(--whatsapp-dark), 0 18px 28px rgba(0, 0, 0, 0.34);
+          font-size: 30px;
+        }
+
+        .sticky-mobile-cta {
+          display: block;
+        }
+
+        body {
+          padding-bottom: 92px;
         }
       }
 
@@ -199,63 +287,84 @@
         html {
           scroll-behavior: auto;
         }
+
+        .whatsapp-cta {
+          transition: none;
+        }
       }
     </style>
   </head>
   <body>
-    <main class="landing" aria-label="劳工法令合规与 HR 管理文件实战课程销售页">
-      <img
-        class="panel"
-        src="assets/sale-page-01.png"
-        width="1080"
-        height="1920"
-        alt="劳工法令合规与 HR 管理文件实战课程，报名即送价值 RM 3,050 的 21 份 HR 必备文件样本。"
-      >
-      <section class="cta-strip" aria-label="WhatsApp 报名">
-        <a
-          class="whatsapp-cta"
-          href="https://wa.me/60138190223?text=%E6%88%91%E6%83%B3%E4%BA%86%E8%A7%A3%E5%8A%B3%E5%B7%A5%E6%B3%95%E4%BB%A4%E8%AF%BE%E7%A8%8B"
-          target="_blank"
-          rel="noopener"
+    <div class="page-shell">
+      <main class="landing" aria-label="劳工法令合规与 HR 管理文件实战课程销售页">
+        <img
+          class="sale-panel"
+          src="assets/sale-page-01.png"
+          width="1080"
+          height="1920"
+          alt="劳工法令合规与 HR 管理文件实战课程，报名即送 21 份 HR 必备文件样本。"
+          data-view-content-trigger
         >
-          报名详情
-        </a>
-      </section>
-      <img
-        class="panel"
-        src="assets/sale-page-02.png"
-        width="1080"
-        height="1920"
-        alt="课程内容：两天学会，终身受用，从法律基础到实战操作全面覆盖。"
-      >
-      <section class="cta-strip" aria-label="WhatsApp 报名">
-        <a
-          class="whatsapp-cta"
-          href="https://wa.me/60138190223?text=%E6%88%91%E6%83%B3%E4%BA%86%E8%A7%A3%E5%8A%B3%E5%B7%A5%E6%B3%95%E4%BB%A4%E8%AF%BE%E7%A8%8B"
-          target="_blank"
-          rel="noopener"
+
+        <section class="cta-band gold" aria-label="WhatsApp 报名详情">
+          <h2 class="cta-title">想了解课程与报名详情？</h2>
+          <a
+            class="whatsapp-cta"
+            href="https://wa.me/60138190223?text=%E6%88%91%E6%83%B3%E4%BA%86%E8%A7%A3%E5%8A%B3%E5%B7%A5%E6%B3%95%E4%BB%A4%E8%AF%BE%E7%A8%8B"
+            target="_blank"
+            rel="noopener"
+            data-whatsapp-cta
+          >报名详情</a>
+        </section>
+
+        <img
+          class="sale-panel"
+          src="assets/sale-page-02.png"
+          width="1080"
+          height="1920"
+          alt="课程内容：两天学会，终身受用，从法律基础到实战操作，全面覆盖。"
         >
-          报名详情
-        </a>
-      </section>
-      <img
-        class="panel"
-        src="assets/sale-page-03.png"
-        width="1080"
-        height="1920"
-        alt="独家赠品：21 份 HR 必备工具包，总价值高达 RM 3050。"
-      >
-      <section class="cta-footer" aria-label="WhatsApp 报名">
-        <h2 class="cta-title">立即 WhatsApp 报名</h2>
-        <a
-          class="whatsapp-cta"
-          href="https://wa.me/60138190223?text=%E6%88%91%E6%83%B3%E4%BA%86%E8%A7%A3%E5%8A%B3%E5%B7%A5%E6%B3%95%E4%BB%A4%E8%AF%BE%E7%A8%8B"
-          target="_blank"
-          rel="noopener"
+
+        <section class="cta-band" aria-label="WhatsApp 报名详情">
+          <h2 class="cta-title">员工问题不要等到被投诉才处理</h2>
+          <a
+            class="whatsapp-cta"
+            href="https://wa.me/60138190223?text=%E6%88%91%E6%83%B3%E4%BA%86%E8%A7%A3%E5%8A%B3%E5%B7%A5%E6%B3%95%E4%BB%A4%E8%AF%BE%E7%A8%8B"
+            target="_blank"
+            rel="noopener"
+            data-whatsapp-cta
+          >报名详情</a>
+        </section>
+
+        <img
+          class="sale-panel"
+          src="assets/sale-page-03.png"
+          width="1080"
+          height="1920"
+          alt="独家赠品：报名即送 21 份 HR 文件模板，文件礼包价值 RM3,050，上课领取可直接用。"
         >
-          报名详情
-        </a>
-      </section>
-    </main>
+
+        <section class="cta-band" aria-label="WhatsApp 报名详情">
+          <h2 class="cta-title">立即 WhatsApp 了解报名详情</h2>
+          <a
+            class="whatsapp-cta"
+            href="https://wa.me/60138190223?text=%E6%88%91%E6%83%B3%E4%BA%86%E8%A7%A3%E5%8A%B3%E5%B7%A5%E6%B3%95%E4%BB%A4%E8%AF%BE%E7%A8%8B"
+            target="_blank"
+            rel="noopener"
+            data-whatsapp-cta
+          >报名详情</a>
+        </section>
+      </main>
+    </div>
+
+    <div class="sticky-mobile-cta" aria-label="固定 WhatsApp 报名按钮">
+      <a
+        class="whatsapp-cta"
+        href="https://wa.me/60138190223?text=%E6%88%91%E6%83%B3%E4%BA%86%E8%A7%A3%E5%8A%B3%E5%B7%A5%E6%B3%95%E4%BB%A4%E8%AF%BE%E7%A8%8B"
+        target="_blank"
+        rel="noopener"
+        data-whatsapp-cta
+      >报名详情</a>
+    </div>
   </body>
 </html>
