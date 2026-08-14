@@ -245,7 +245,8 @@
         color: #fff;
       }
 
-      .lead-form input {
+      .lead-form input,
+      .lead-form select {
         width: 100%;
         min-height: 54px;
         padding: 13px 15px;
@@ -258,9 +259,20 @@
         outline: none;
       }
 
-      .lead-form input:focus {
+      .lead-form input:focus,
+      .lead-form select:focus {
         border-color: #111;
         box-shadow: 0 0 0 3px rgba(255, 242, 0, 0.35);
+      }
+
+      .required-mark {
+        margin-left: 2px;
+        color: #fff200;
+        font-weight: 900;
+      }
+
+      .lead-form select {
+        cursor: pointer;
       }
 
       .lead-submit {
@@ -345,7 +357,8 @@
           grid-column: 1;
         }
 
-        .lead-form input {
+        .lead-form input,
+        .lead-form select {
           min-height: 52px;
           font-size: 17px;
         }
@@ -468,23 +481,28 @@
 
           <form class="lead-form" data-lead-form>
             <div>
-              <label for="name-3">Name</label>
+              <label for="name-3">姓名 Name<span class="required-mark">*</span></label>
               <input id="name-3" name="name" type="text" autocomplete="name" required>
             </div>
 
             <div>
-              <label for="whatsapp-3">WhatsApp</label>
+              <label for="whatsapp-3">WhatsApp号码<span class="required-mark">*</span></label>
               <input id="whatsapp-3" name="whatsapp" type="tel" inputmode="tel" autocomplete="tel" required>
             </div>
 
             <div>
               <label for="email-3">Email</label>
-              <input id="email-3" name="email" type="email" autocomplete="email" required>
+              <input id="email-3" name="email" type="email" autocomplete="email">
             </div>
 
             <div>
-              <label for="employees-3">No. of Employee</label>
-              <input id="employees-3" name="no_of_employee" type="number" inputmode="numeric" min="1" step="1" required>
+              <label for="employees-3">公司员工人数</label>
+              <select id="employees-3" name="no_of_employee">
+                <option value="" selected>请选择</option>
+                <option value="1 - 10 人">1 - 10 人</option>
+                <option value="11 - 50 人">11 - 50 人</option>
+                <option value="51 人以上">51 人以上</option>
+              </select>
             </div>
 
             <input type="hidden" name="course" value="劳工法令合规与HR管理文件实战课程">
